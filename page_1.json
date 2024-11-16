@@ -1,0 +1,11 @@
+[
+    {
+        "command": "click",
+        "elementidentification": "<td data-label=\"Account\"><input type=\"submit\" value=\"00006360\" class=\"displayaslink\"></td>",
+        "fieldselection": "input[type='submit']",
+        "fieldvalue": "00006360",
+        "target": "//input[@value='00006360']",
+        "target-type": "XPATH",
+        "value": ""
+    }
+]

@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gov Guide</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <script type="text/javascript" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .body {
+            background-color: #d9f4fa;
+            background-image: url("{{ url_for('static', filename='bg_grid.jpeg') }}");
+            font-family: Roboto;
+        }
+
+        .header-container {
+            background-color: #efb071 !important;
+            color: #476c77;
+            font-family: Sriracha;
+        }
+
+        .header-container-inner {
+            background-color: #efb071 !important;
+            background-image: url("{{ url_for('static', filename='1155097.png') }}");
+            color: #476c77;
+            font-family: Sriracha;
+        }
+
+        .card-header {
+            background-color: #476c77 !important;
+            color: #ff9e3d;
+            font-family: Sriracha;
+            font-size: large;
+        }
+
+        .card-body {
+            background-color: #e1f3ff !important;
+            color: #ff9e3d;
+            font-family: Roboto;
+        }
+
+        .h1 {
+            color: #476c77;
+            font-family: Sriracha;
+        }
+
+        .h5 {
+            font-weight: bold;
+        }
+
+        .conversation-log {
+            height: 375px;
+        }
+
+        .image-container {
+            height: 575px;
+            background-image: url("bg_grid.jpg");
+        }
+
+        /* Add clearfix class */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Apply clearfix to the message container */
+        .conversation-log {
+            height: 375px;
+            overflow: auto; /* This will ensure the container adjusts to floating children */
+        }
+
+        /* Common message styling */
+        .message {
+            max-width: 60%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 15px;
+            display: inline-block;
+            clear: both; /* Ensure each message starts on a new line */
+        }
+
+        /* Assistant message */
+        .assistant-message {
+            background-color: #3498db;
+            color: white;
+            float: left;
+            text-align: left;
+            border-radius: 15px 15px 15px 5px;
+            clear: both; /* Prevent collision with the previous message */
+        }
+
+        /* User message */
+        .user-message {
+            background-color: #e74c3c;
+            color: white;
+            float: right;
+            text-align: left;
+            border-radius: 15px 15px 5px 15px;
+            clear: both; /* Prevent collision with the previous message */
+        }
+
+        /* Interjection message */
+        .inter-message {
+            background-color: transparent;
+            color: grey;
+            float: left;
+            text-align: left;
+            border-radius: 15px 15px 15px 5px;
+            clear: both; /* Ensure this message doesn't collide with others */
+        }
+
+        /* Optional: If using clearfix for the parent */
+        .conversation-log {
+            overflow: auto; /* This helps contain floated elements */
+        }
+
+        .portal-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .footer {
+            font-size: xx-small;
+            color: #476c77;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="body">
+
+    <div class="container py-4 pb- 5">
+        <div class="p-3 mb-2 bg-body-tertiary rounded-3 header-container bg-gradient shadow-lg ">
+            <div class="container-fluid py-1 p-2 header-container-inner">
+                <a class="d-flex align-items-center text-body-emphasis text-decoration-none p-2 border-bottom ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#476c77" class="bi bi-binoculars-fill" viewBox="0 0 16 16">
+                        <path d="M4.5 1A1.5 1.5 0 0 0 3 2.5V3h4v-.5A1.5 1.5 0 0 0 5.5 1zM7 4v1h2V4h4v.882a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V13H9v-1.5a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5V13H1V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V4zM1 14v.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5V14zm8 0v.5a1.5 1.5 0 0 0 1.5 1.5h3a1.5 1.5 0 0 0 1.5-1.5V14zm4-11H9v-.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5z"></path>
+                    </svg> &nbsp;<h1 class="display-5 fw-bold h1 ms-1">GovGuide </h1>
+                </a>
+                <p class="col-md-8 fs-4">Your concierge to access government services.</p>
+            </div>
+        </div>
+
+        <section>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow ">
+                        <div class="card-title rounded-3 card-header hadow">
+                            <h5 class="card-title h5">Conversation</h5>
+                            <p class="card-text">Talk to your counselor</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="container border border-primary conversation-log overflow-auto rounded" id="conversationLog">  </div>
+                            <br />
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <textarea type="text" id="voiceTextbox" placeholder="Tell me your problems..." class="form-control form-control-lg" rows="3"> </textarea>
+                                    </div>
+                                </div>
+                                <div class="row py-3 ">
+                                    <div class="d-flex justify-content-evenly ">
+                                        <button type="button" class="btn btn-secondary " id="voiceBtn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="--bs-primary" class="bi bi-mic" viewBox="0 0 16 16">
+                                                <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"></path>
+                                                <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3"></path>
+                                            </svg>
+                                            Talk
+                                        </button>
+                                        <button type="button" class="btn btn-primary " id="sendBtn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                                <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"></path>
+                                            </svg>
+                                            Send
+                                        </button>
+                                        <button type="button" class="btn btn-secondary " id="resetBtn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="--bs-primary" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"></path>
+                                                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"></path>
+                                            </svg>
+                                            Reset
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card h-100 shadow">
+                        <div class="card-title rounded-3 card-header opacity-95 shadow">
+                            <h5 class="card-title h5"> Web Portal </h5>
+                            <p class="card-text">See the website to work with your counselor</p>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+
+                            <div class="image-container border border-secondary overflow-auto rounded">
+                                <img id="webPortal" class="portal-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+<footer class="footer"> <a>**Free background photo from pngtree.com/</a></footer>
+</html>

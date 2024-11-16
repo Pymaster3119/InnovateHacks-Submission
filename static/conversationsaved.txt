@@ -1,0 +1,9 @@
+{"role": "assistant", "content": "How can I help you today?"}
+{"role":"user","content":"I just recieved my 2025 preliminary tax bill. I want to check online how much is due and when."}
+{"role": "assistant", "content": "To help you check your 2025 preliminary tax bill online, could you please provide the website or platform where you usually access your tax information? This will allow me to guide you through the process or interact with the site on your behalf."}
+{"role":"user","content":"These are property taxes from Montville Township New Jersey, and I do not know the website."}
+{"role": "assistant", "content": "To check your property tax bill for Montville Township, New Jersey, you can use the Tax Lookup page. Here\u2019s how you can proceed:\n\n1. **Tax Account Information:**\n   - Enter your Block, Lot, and Qualifier, then click \"Search.\"\n   - Alternatively, you can enter your Tax Account No. and click \"Search.\"\n\n2. **Fire Line/Water/Sewer Account Information:**\n   - Enter your Account No. or Street and click \"Search.\"\n\nMake sure to try different versions of your street name if you encounter any issues. If you have your tax account number or property details, you can enter them to find your tax information."}
+{"role":"user","content":"My block number is 156 and my lot number is 26."}
+{"role": "assistant", "content": "You can view the details of your property tax by clicking on the account number link \"00006360\" for the property located at 5 Woodmont Rd. Would you like me to proceed with this?"}
+{"role":"user","content":"Yes go ahead."}
+{"role": "assistant", "content": "Here are the details for your 2025 property tax:\n\n- **Due Dates and Amounts:**\n  - **February 1, 2025:** $2,362.97 (Open)\n  - **May 1, 2025:** $2,362.97 (Open)\n\n- **Total for 2025:** $4,725.94\n\nYou can also pay your tax bill online using the \"Pay Your Tax Bill\" option on the page. Let me know if you need further assistance!"}

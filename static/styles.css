@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #2c3e50; /* Non-white background */
+}
+
+header {
+    padding: 20px;
+}
+
+h1 {
+    color: #e74c3c; /* Title color */
+    margin: 0;
+}
+
+h2 {
+    color: #3498db; /* Subtitle color */
+    margin: 10px 0 0;
+}
+
+section {
+    margin-top: 20px;
+}
+
+.textbox {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.voice-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.voice-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Style for the Web Portal header */
+.web-portal-header {
+    color: #f39c12; /* Header color */
+    font-size: 24px; /* Increased font size */
+    margin: 20px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+}
+
+/* Image container with scrolling */
+.image-container {
+    width: 80%;
+    height: 60vh; /* Set height to 60% of the viewport height */
+    overflow: auto; /* Add scrollbar when needed */
+    margin: 0 auto; /* Center the container */
+    border: 2px solid #3498db; /* Border around the container */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Padding inside the container */
+    background-color: #ecf0f1; /* Light background for contrast */
+}
+
+.portal-img {
+    display: block;
+    max-width: 100%; /* Ensure image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.textbox {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    width: 300px;
+}
+
+textarea {
+    width: 80%; /* Width for the conversation log */
+    height: 100px; /* Height for the conversation log */
+    margin: 10px 0; /* Margin for spacing */
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none; /* Disable resizing */
+}
+
+/* Style for the Conversation header */
+.conversation-header {
+    color: #f39c12; /* Same color as Web Portal */
+    font-size: 24px; /* Same font size as Web Portal */
+    margin: 20px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Same shadow for depth */
+    text-align: center;
+}
+
+/* Conversation log styling (unchanged) */
+.conversation-log {
+    width: 80%;
+    height: 300px;
+    margin: 10px auto;
+    overflow-y: auto;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ecf0f1;
+}
+
+
+.message {
+    max-width: 60%; /* Limit the width of message bubbles */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+    position: relative;
+    display: inline-block;
+    clear: both;
+}
+
+/* Assistant message styling */
+.assistant-message {
+    background-color: #3498db; /* Blue for assistant */
+    color: white;
+    text-align: left;
+    float: left; /* Align assistant messages to the left */
+    border-radius: 15px 15px 15px 5px; /* Slightly rounded corners, with more rounding on the right */
+    position: relative; /* Needed for tail positioning */
+}
+
+/* User message styling */
+.user-message {
+    background-color: #e74c3c; /* Red for user */
+    color: white;
+    text-align: left;
+    float: right; /* Align user messages to the right */
+    border-radius: 15px 15px 5px 15px; /* Slightly rounded corners, with more rounding on the left */
+    position: relative; /* Needed for tail positioning */
+}
+
+/* Assistant message "tail" (bottom left) */
+.assistant-message::after {
+    content: '';
+    position: absolute;
+    bottom: 10px; /* Move the tail to the bottom */
+    left: -15px; /* Position it outside on the left */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #3498db transparent transparent; /* Blue triangle pointing left */
+}
+
+/* User message "tail" (bottom right) */
+.user-message::after {
+    content: '';
+    position: absolute;
+    bottom: 10px; /* Move the tail to the bottom */
+    right: -15px; /* Position it outside on the right */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #e74c3c; /* Red triangle pointing right */
+}

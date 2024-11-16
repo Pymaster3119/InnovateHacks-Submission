@@ -1,0 +1,11 @@
+[
+    {
+        "command": "click",
+        "elementidentification": "<a href=\"https://www.cit-e.net/montville-nj/cit-e-access/TaxBill_Std/?tpid=9078\">Tax Account Look Up</a>",
+        "fieldselection": "href",
+        "fieldvalue": "https://www.cit-e.net/montville-nj/cit-e-access/TaxBill_Std/?tpid=9078",
+        "target": "//a[@href='https://www.cit-e.net/montville-nj/cit-e-access/TaxBill_Std/?tpid=9078']",
+        "target-type": "XPATH",
+        "value": ""
+    }
+]
